@@ -1,0 +1,120 @@
+@media screen and (max-width: 1060px) {
+    header p {
+        font-size: 14px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    #header-div__1 {
+        padding-left: 0;
+    }
+    header p {
+        text-align:center;
+        font-size: 16px;
+    }
+
+    .badge {
+        right: 8%;
+    }
+
+    #formDiv1 {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    header form p {
+        margin: 12px 6px;
+    }
+  }
+@media screen and (max-width: 575px) {
+    #formDiv2 {
+        margin-top: 5%;
+  }
+    #addForm p {
+        margin-left: 6px;
+        margin-right: 6px;
+    }
+
+    .resHr {
+        display: block;
+        margin-top: 7.5%;
+        width: 20%;
+    }
+
+    #formDiv2 #addForm {
+        bottom: initial;
+    }
+}
+
+
+
+
+@media screen and (max-width: 576px) {
+    h5 {
+        margin: 25px;
+        font-size: 1.1em;
+        text-align:center;
+    }
+
+    #header-icons__1 {
+        justify-content: center;
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    .badge {
+        right: 22px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    h5 {
+        margin: 22px 0px !important;
+        font-size:.95em;
+    }
+
+    .badge {
+        right: 17px;
+    }
+}
+
+@media screen and (max-width: 413px) {
+    .addFormBtn {
+        margin-left: 0;
+        font-size: 14px;
+    }
+
+    #enterNum {
+        width: 40px;
+        height: 35px;
+    }
+}
+  
+  @media screen and (max-width: 370px) {
+    header, main, footer {  padding: 0 1%;  }
+
+    header p {
+        font-size: 15px;
+        margin: 8px;
+        line-height: 1.25em;
+    }
+    
+    #header-div__2 {
+        padding-left:5px;
+    }
+
+    .addFormBtn {
+        margin-left: 0;
+        font-size: 15px;
+    }
+
+    #enterNum {
+        width: 40px;
+        height: 35px;
+    }
+
+    h5 {
+        margin: 16px 0px !important;
+        font-size:.85em;
+    }
+  }
