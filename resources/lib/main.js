@@ -1,45 +1,33 @@
 $(document).ready(function() {
-    var vW = $(window).width();
-    $(".mc_small").height($(".mc_small").width());
-    if (vW > 634) {
-        $(".mc_large, .mc_right").height($(".mc_large").width());
-    }
-    else
-    {
-        $(".mc_large").height($(".mc_large").width());
-
-    }
-
-    $(window).on("scroll", function() {
-        var isScrolling;
-
-// Listen for scroll events
-window.addEventListener('scroll', function ( event ) {
-
-	// Clear our timeout throughout the scroll
-	window.clearTimeout( isScrolling );
-
-	// Set a timeout to run after scrolling ends
-	isScrolling = setTimeout(function() {
-
-		// Run the callback
-		$("header").css("box-shadow", "none");
-
-	}, 200);
-
-}, false);
-        $("header").css("box-shadow", "2px 5px 8px #E7E7E7");
-        console.log("scrolling...");
-    })
-
+    var windowWidth = $(window).width();
+    var windowHeight = $(window).height();
     var padding;
-    if ($(document).width() < 800)
-        padding = $("header").height() + 45 + "px";
-    else
-        padding = $("header").height() + 30 + "px";
+    var btnPosition;
+
+    //  Set containers initial height & spacing
+    $(".mc_small").height($(".mc_small").width());
+
+    if (windowWidth > 634)  $(".mc_large, .mc_right").height($(".mc_large").width());
+    else  $(".mc_large").height($(".mc_large").width());
+
+    if (windowWidth < 800)  padding = $("header").height() + 45 + "px";
+    else  padding = $("header").height() + 30 + "px";
 
     $("main").css("margin-top", padding);
 
+    //  Change styles on scroll event
+    $(window).on("scroll", function() {
+        var scrolling;  
+        window.addEventListener('scroll', function (e) {
+            window.clearTimeout(scrolling);
+            scrolling = setTimeout(function() {
+                $("header").css("box-shadow", "none");
+            }, 200);
+        }, false);
+        $("header").css("box-shadow", "2px 5px 8px #E7E7E7");
+    });
+
+    //  Inject form template
     if ($("#numberOfItems").text() == "0")
         $(".badge").addClass("hidden");
 
@@ -57,18 +45,7 @@ window.addEventListener('scroll', function ( event ) {
         </form>
     `;
 
-    
-    var heightDiv1 = $("#first-info-div").height();
-    var heightDiv2 = $("#second-info-div").height();
-/*
-    if (vW > 767 && vW < 870) {
-        if (heightDiv1 > heightDiv2) 
-            $("#second-info-div").height($("#first-info-div").height());
-        else 
-            $("#first-info-div").height($("#second-info-div").height());
-    }
-*/
-    windowHeight = $(window).height();
+    // Position the btn element
     btnPosition = $("header").height() + $("main").height() -10;
 
     if (windowHeight <= btnPosition)
@@ -77,12 +54,8 @@ window.addEventListener('scroll', function ( event ) {
         $("#formDiv2").append(template);
 });
 
-var counter = 0;
-var windowHeight;
-var btnPosition;
-
 //  Function that handles shoppingcart-related events
-
+var counter = 0;
 const clicked = () => {
     var enteredNum = Number(document.getElementById("enterNum").value);
 

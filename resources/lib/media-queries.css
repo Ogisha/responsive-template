@@ -1,21 +1,24 @@
-@media screen and (max-width: 1172px) {
-    .badge {  right: 8%; }
+@media screen and (min-width: 1172px) {
+    .badge {  right: 7.5%; }
+}
+
+@media screen and (max-width: 1171px) {
+    .badge {  right: 8%;  top: 3px;}
+}
+
+@media screen and (max-width: 965px) {
+    .badge {  right: 8%;  top: 3px;}
 }
 
 @media screen and (max-width: 875px) {
-    .badge {  right: 8%;  }
+    .badge {  right: 3.5%; top: -10px; }
     .footer-badge {  margin-right: 1px; border-width: 2px; font-size: .95em; }
-}
-
-@media screen and (min-width: 634px) and (max-width: 875px) {
-    .badge {  top: -25%!important; }
 }
 
 @media screen and (max-width: 768px) {
     .footer-info-container {  margin: 4% 0;  }
     #header-div__1 {  padding-left: 0;  }
     header p {  text-align:center; font-size: 16px;  }
-    .badge {  right: 8%; }
     #formDiv1 {  display: flex;  justify-content: flex-start;  }
     header form p {  margin: 12px 6px;  }
     .footer-badge {  font-size:1em; margin-right: 7px; border-width: 3px;  }
@@ -31,14 +34,14 @@
     h6 {  font-size: .8rem;  }
     .custom_small {  font-size: .7rem; margin-bottom: 2px; }
     .prices_desc {  font-size: .7rem;  }
+    .badge {  right: 25px; top: -10px;} 
 }
 
 @media screen and (max-width: 634px) {
-    .badge {   }
+    #formDiv2 #addForm {  position: unset; margin-left: 0;}  
     h6 {  font-size: .8em;  }
     .custom_small {  font-size: .8em; margin-bottom: 2px;  }
     .prices_desc {  font-size: .8rem;  }
-    #formDiv2 #addForm {  position: initial;  }
 }
 
 @media screen and (max-width: 575px) {
@@ -50,7 +53,7 @@
     #formDiv2 #addForm {  bottom: 75px;  }
     h5 {  margin: 25px; font-size: 1.1em; text-align: center;  }
     #header-icons__1 {  justify-content: center;  }
-    .badge {  right: 22px;  }
+    .badge {  right: 18px;  top:3px;}
 }
 
 @media screen and (max-width: 450px) {
@@ -70,5 +73,5 @@
     #header-div__2 {  padding-left: 5px;  }
     .addFormBtn {  margin-left: 0; font-size: 15px;  }
     h5 {  margin: 16px 0px !important; font-size: .85em;  }
-    .badge {  right: 12px;  }
+    .badge {  right: 12px; top: 0px; }
 }
