@@ -1,4 +1,4 @@
-* { box-sizing: border-box; }
+ * { box-sizing: border-box; }
 
 @font-face {
     font-family: 'SourceSansPro-Regular';
@@ -74,7 +74,8 @@ header {
     color: white;
     font-size: .8em;
     border-radius: 50%;
-    padding:4px;
+    padding:0px;
+    border:5px solid red;
     font-weight: 700;
 }
 
@@ -208,6 +209,7 @@ footer li span {  color: black;  }
 .white-footer-container {
     background-color: white;
     padding: 4% 4% 2% 4%;
+    min-height: 325px;
 }
 
 .footer-badge {
@@ -242,13 +244,12 @@ footer li span {  color: black;  }
     display: inline-block;
 }
 
-.table-responsive-sm {
-    width: 50%;
+.table-responsive-xs {
     margin-top: 1%;
     margin-bottom: 0;
     font-weight: 500;
 }
 
-.table-responsive-sm td {  padding: .5em;  }
+.table-responsive-xs td {  padding: .5em 1em;  }
 
 td:first-of-type {  text-align: right;  }

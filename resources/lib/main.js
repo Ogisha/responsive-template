@@ -1,11 +1,40 @@
 $(document).ready(function() {
+    var vW = $(window).width();
     $(".mc_small").height($(".mc_small").width());
-    $(".mc_large, .mc_right").height($(".mc_large").width());
+    if (vW > 634) {
+        $(".mc_large, .mc_right").height($(".mc_large").width());
+    }
+    else
+    {
+        $(".mc_large").height($(".mc_large").width());
+
+    }
+
+    $(window).on("scroll", function() {
+        var isScrolling;
+
+// Listen for scroll events
+window.addEventListener('scroll', function ( event ) {
+
+	// Clear our timeout throughout the scroll
+	window.clearTimeout( isScrolling );
+
+	// Set a timeout to run after scrolling ends
+	isScrolling = setTimeout(function() {
+
+		// Run the callback
+		$("header").css("box-shadow", "none");
+
+	}, 200);
+
+}, false);
+        $("header").css("box-shadow", "2px 5px 8px #E7E7E7");
+        console.log("scrolling...");
+    })
 
     var padding;
     if ($(document).width() < 800)
         padding = $("header").height() + 45 + "px";
-
     else
         padding = $("header").height() + 30 + "px";
 
@@ -26,20 +55,27 @@ $(document).ready(function() {
                 Add to cart
             </button>
         </form>
-    `
+    `;
 
+    
+    var heightDiv1 = $("#first-info-div").height();
+    var heightDiv2 = $("#second-info-div").height();
+/*
+    if (vW > 767 && vW < 870) {
+        if (heightDiv1 > heightDiv2) 
+            $("#second-info-div").height($("#first-info-div").height());
+        else 
+            $("#first-info-div").height($("#second-info-div").height());
+    }
+*/
     windowHeight = $(window).height();
-
     btnPosition = $("header").height() + $("main").height() -10;
 
-    if (windowHeight <= btnPosition) {
-        $("#formDiv1, #formDiv2").append(template);
-    }
+    if (windowHeight <= btnPosition)
+        $("#formDiv1").append(template);
     else
-    $("#formDiv1, #formDiv2").append(template);
-    
-
-})
+        $("#formDiv2").append(template);
+});
 
 var counter = 0;
 var windowHeight;
@@ -48,7 +84,7 @@ var btnPosition;
 //  Function that handles shoppingcart-related events
 
 const clicked = () => {
-    let enteredNum = Number(document.getElementById("enterNum").value);
+    var enteredNum = Number(document.getElementById("enterNum").value);
 
     if ((Number(enteredNum)) <= 0)  alert("Please enter a valid number of items.");
     else  {
@@ -63,12 +99,16 @@ const clicked = () => {
                 height: '-=10px'
         }, 350);
     }
-    
-    document.getElementById("numberOfItems").innerHTML = counter;
+
+    if (counter < 10) 
+        document.getElementById("numberOfItems").innerHTML = counter;
+  
+    else {
+        counter -= enteredNum;
+        alert("You can have up to 9 items in your shoping cart.");
+    }
+
     document.getElementById("enterNum").value = "";
 }
 
 //  Function END
-
-
-
